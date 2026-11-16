@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Ticket Submission Form{% endblock %}
+{% block submit %}<strong> Submit Ticket (You are here)</strong>{% endblock %}
+{% block content %}
+<div class="row g-3">
+    <article class="col-sm-12 col-md-12 col-lg-12 mb-2">
+        <div class="card h-100 bg-brandcard shadow-lg">
+            <div class="card-body">
+                <h1 class="card-title text-center"><i class="bi bi-ticket"></i> Ticket Submission Form</h1>
+                <h5 class="card-text text-center">Fill out each field to submit your ticket</h5>
+            </div>
+        </div>
+    </article>
+    <article class="col-sm-12 col-md-12 col-lg-12 mb-2">
+        <div class="card h-100 bg-brandcard shadow-lg">
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label fs-3">Your Coventry ID</label>
+                        <input type="text" class="form-control" id="covId" placeholder="Enter your Coventry ID"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="location" class="form-label fs-3">Location of issue</label>
+                        <select class="form-control mb-3" id="buildingNumber" required>
+                            <option value="" disabled selected>Select building</option>
+                            <option value="A">Building A</option>
+                            <option value="B">Building B</option>
+                            <option value="C">Building C</option>
+                            <option value="Eng">Engineering Building</option>
+                        </select>
+                        <input type="text" class="form-control" id="roomNumber" placeholder="Enter room number"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="issueType" class="form-label fs-3">Type of issue</label>
+                        <select class="form-control mb-3" id="issueType" required>
+                            <option value="" disabled selected>Select issue type</option>
+                            <option value="hardware">Hardware</option>
+                            <option value="software">Software</option>
+                            <option value="network">Network</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="priority" class="form-label fs-3">Urgency</label>
+                        <select class="form-control mb-3" id="priority" required>
+                            <option value="" disabled selected>Select urgency</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="department" class="form-label fs-3">Department</label>
+                        <input type="text" class="form-control" id="department" placeholder="Enter your department"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="deviceType" class="form-label fs-3">Device type</label>
+                        <select class="form-control mb-3" id="deviceType" required>
+                            <option value="" disabled selected>Select device type</option>
+                            <option value="desktop">Desktop</option>
+                            <option value="laptop">Laptop</option>
+                            <option value="printer">Printer</option>
+                            <option value="projector">Projector</option>
+                            <option value="network">Network Device</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="deviceModel" class="form-label fs-3">Device model</label>
+                        <input type="text" class="form-control" id="deviceModel"
+                            placeholder="Enter device model (if applicable)">
+                    </div>
+                    <div class="mb-3">
+                        <label for="operatingSystem" class="form-label fs-3">Operating system</label>
+                        <input type="text" class="form-control" id="operatingSystem"
+                            placeholder="Enter operating system (if applicable)">
+                    </div>
+                    <div class="mb-3">
+                        <label for="issueDescription" class="form-label fs-3">Issue description</label>
+                        <textarea class="form-control" id="issue" rows="4"
+                            placeholder="Describe the issue you are experiencing" required></textarea>
+                    </div>
+                    <button type="submit" class="btn bg-mainbutton border-secondary w-100 h-100 fs-3"
+                        onclick="window.location.href='{% url 'directory_app:ticketstatus' %}'"><i
+                            class="bi bi-pen"></i> Submit Ticket</button>
+                </form>
+            </div>
+        </div>
+</div>
+{% endblock %}

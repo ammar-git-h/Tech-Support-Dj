@@ -1,0 +1,77 @@
+/* Header and Footer color */
+.bg-brand {
+    background: #404040;
+    background: linear-gradient(135deg,#404040 0%, #adadad 100%);
+}
+
+/* Background color */
+.bg-brandbg {
+    background-color:#d2f0ff
+}
+
+/* Card background color */
+.bg-brandcard {
+    background: #D1FFF4;
+    background: linear-gradient(135deg,#D1FFF4 0%, #FAFAF2 100%);
+}
+
+/* Table header color */
+.table-header th {
+    background: #51ACED;
+    background: linear-gradient(135deg,#3c97d8 0%, #70bdf3 100%);
+}
+
+/* Table body color */
+.table-body td {
+    background: #D1FFF4;
+    background: linear-gradient(135deg,#D1FFF4 0%, #FAFAF2 100%);
+}
+
+/* this is the green gradient color. used for green buttons (replacing bg-success)*/
+.bg-mainbutton {
+    background: #208b39;
+    background: linear-gradient(135deg,#208b39 0%, #42d765 100%);
+}
+
+/* this is the blue gradient color. used for blue buttons (replacing bg-info)*/
+.bg-secondbutton {
+    background: #51ACED;
+    background: linear-gradient(135deg,#3c97d8 0%, #70bdf3 100%);
+}
+
+/* this is the yellow gradient color. used for yellow buttons (replacing bg-warning)*/
+.bg-thirdbutton {
+    background: #e1cc78;
+    background: linear-gradient(135deg,#e1cc78 0%, #c2c855 100%);
+}
+
+
+
+/* Stops the navbar brand from overflowing on smaller screens 
+   while keeping the hamburger button in place. */
+.navbar-brand {
+    flex: 1 1 0;
+
+}
+
+@media (min-width: 992px) {
+    .navbar-brand {
+        flex: 0 1 auto;
+    }
+}
+
+
+
+
+
+/* this is the blue-pink gradient color. currently not used*/
+.bg-bluepinkgradient {
+    background: #85dcff;
+    background: linear-gradient(135deg,#85dcff 0%, #CF99F7 100%);
+}
+
+/* this is the blue gradient color. currently not used*/
+.bg-bgbluegradient {
+    background: #8CC4FF;
+    background: linear-gradient(135deg,#6d92e8 0%, #8CC4FF 100%);
+}

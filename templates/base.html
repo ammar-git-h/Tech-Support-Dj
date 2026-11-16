@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Base Title{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body class="bg-brandbg">
+    <header class="bg-brand text-white py-4 text-center">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container align-items-start align-items-lg-center">
+                    <a class="navbar-brand h2 fw-bold text-white d-flex align-items-center me-0" href="{% url 'directory_app:home' %}">
+                        <img src="{% static 'images/tkhlogo.png' %}" alt="TKH logo" class="me-1" height="50" >
+                        <span class="text-wrap">Campus Tech Support Ticketing</span>
+                    </a>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navBar">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item"><a class="nav-link active text-white" href="{% url 'directory_app:home' %}"><i class="bi bi-house"></i>{% block home %} Home{% endblock %}</a></li>
+                            <li class="nav-item"><a class="nav-link text-white" href="{% url 'directory_app:ticketform' %}"><i class="bi bi-ticket"></i>{% block submit %} Submit Ticket{% endblock %}</a></li>
+                            <li class="nav-item"><a class="nav-link text-white" href="{% url 'directory_app:ticketstatus' %}"><i class="bi bi-check-circle"></i>{% block status %} Ticket Status{% endblock %}</a></li>
+                            <li class="nav-item"><a class="nav-link text-white" href="{% url 'directory_app:dashboard' %}"><i class="bi bi-database"></i>{% block dashboard %} IT Dashboard{% endblock %}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+    </header>
+    <main class="container my-4 py-5">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="bg-brand text-white py-4 text-center">
+        <article>
+            <div>
+                <img src="{% static 'images/tkh.png' %}" alt="The Knowledge Hub" width="198.5" height="77.5" class="mb-3">
+            </div>
+            <div>
+                <h5>Incase website is down, or if you are experiencing issues, visit the IT department for quick assistance.</h5>
+            </div>
+        </article>
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>

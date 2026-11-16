@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}IT Dashboard{% endblock %}
+{% block dashboard %}<strong> IT Dashboard (You are here)</strong>{% endblock %}
+{% block content %}
+<!-- Main text-->
+<div class="row g-3">
+    <article class="col-sm-12 col-md-12 col-lg-12 mb-3">
+        <div class="card h-100 bg-brandcard shadow-lg">
+            <div class="card-body">
+                <h1 class="card-title text-center mb-3"><i class="bi bi-database"></i> IT Dashboard</h1>
+                <h5 class="card-text text-center"> Click specific tickets to view their details and update their status.
+                </h5>
+            </div>
+        </div>
+    </article>
+</div>
+
+<!-- Search bar that filters the table -->
+<div class="mb-3">
+    <!-- Label for accessibility -->
+    <label for="tableSearch" class="form-label visually-hidden">Search tickets</label>
+
+    <!-- Search bar -->
+    <div class="input-group">
+        <span class="input-group-text"><i class="bi bi-search"></i></span>
+        <input type="search" id="tableSearch" class="form-control"
+            placeholder="Search by name, department, device, issue, status..." autocomplete="off">
+    </div>
+</div>
+
+<!-- table-responsive stops the table from overflowing off the screen -->
+<div class="table-responsive">
+    <!-- Table for displaying ticket information    -->
+    <table class="table table-hover table-bordered border-secondary">
+
+        <thead class="table-header">
+            <tr>
+                <!-- The scope=col doesn't really matter much, but it helps with accessibility -->
+                <th scope="col">Status</th>
+                <th scope="col">Tech Name</th>
+                <th scope="col">Issue</th>
+                <th scope="col">Department</th>
+                <th scope="col">Device Type</th>
+                <th scope="col">OS Version</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Student ID</th>
+            </tr>
+        </thead>
+
+        <tbody id="ticketTableBody" class="table-body">
+
+            <tr>
+                <td>Pending</td>
+                <td>Jane Shalaby</td>
+                <td>Computer crashes</td>
+                <td>Jane's department</td>
+                <td>Jane's device</td>
+                <td>Linux</td>
+                <td>Jane Doe</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td>Assigned</td>
+                <td>John Smith</td>
+                <td>Computer not turning on</td>
+                <td>John's department</td>
+                <td>John's device</td>
+                <td>Windows 10</td>
+                <td>John Doe</td>
+                <td>1</td>
+            </tr>
+
+            <tr>
+                <td>Completed</td>
+                <td>Hamada</td>
+                <td>Computer exploded</td>
+                <td>Hamada's department</td>
+                <td>Hamada's device</td>
+                <td>Windows 11</td>
+                <td>Hamada Doe</td>
+                <td>3</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}

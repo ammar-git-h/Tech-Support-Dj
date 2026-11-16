@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Ticket Status{% endblock %}
+{% block status %}<strong> Ticket Status (You are here)</strong>{% endblock %}
+{% block content %}
+<div class="row g-3">
+
+    <article class="col-sm-12 col-md-12 col-lg-12 mb-2">
+        <div class="card h-100 bg-brandcard shadow-lg">
+            <div class="card-body">
+                <h1 class="card-title"><i class="bi bi-ticket-detailed"></i> Ticket #TCK-00123</h1>
+                <h5 class="card-text">Printer not responding in Lab B204</h5>
+                <span class="badge bg-thirdbutton text-dark fs-6">Open</span>
+                <span class="badge bg-secondary fs-6">Priority: High</span>
+            </div>
+        </div>
+    </article>
+
+    <article class="col-sm-12 col-md-6 col-lg-6 mb-2">
+        <div class="card h-100 bg-brandcard shadow-lg">
+            <div class="card-body">
+                <h3 class="card-title"><i class="bi bi-chat-left-text"></i> Issue</h3>
+                <h5 class="card-text">The printer will not respond when sending print jobs. Restarting did not help.
+                </h5>
+                <p class="mb-1"><strong>Type:</strong> Hardware</p>
+                <p class="mb-1"><strong>Location:</strong> Building B, Room 204</p>
+                <p class="mb-1"><strong>Submitted:</strong> 2026-09-28</p>
+            </div>
+        </div>
+    </article>
+
+    <article class="col-sm-12 col-md-6 col-lg-6 mb-2">
+        <div class="card h-100 bg-brandcard shadow-lg">
+            <div class="card-body">
+                <h3 class="card-title"><i class="bi bi-pc-display"></i> Device Details</h3>
+                <p class="mb-1"><strong>Type:</strong> Network Printer</p>
+                <p class="mb-1"><strong>Model:</strong> HP LaserJet Pro M404dn</p>
+                <p class="mb-1"><strong>OS:</strong> Firmware 20240612</p>
+                <p class="mb-1"><strong>Department:</strong> Engineering</p>
+                <p class="mb-1"><strong>User ID:</strong> COV-1234567</p>
+            </div>
+        </div>
+    </article>
+
+    <article class="col-sm-12 col-md-6 col-lg-6 mb-2">
+        <div class="card h-100 bg-brandcard shadow-lg">
+            <div class="card-body">
+                <h3 class="card-title"><i class="bi bi-person-badge"></i> Assigned Technician</h3>
+                <p class="mb-1"><strong>Name:</strong> Jane Doe</p>
+                <p class="mb-1"><strong>Department:</strong> IT Support</p>
+                <p class="mb-1"><strong>Contact:</strong> jane.doe@kh.edu</p>
+            </div>
+        </div>
+    </article>
+
+    <article class="col-sm-12 col-md-6 col-lg-6 mb-2">
+        <div class="card h-100 bg-brandcard shadow-lg">
+            <div class="card-body">
+                <h3 class="card-title"><i class="bi bi-gear"></i> Actions</h3>
+                <label class="form-label fs-5">Change status</label>
+                <select class="form-control mb-3">
+                    <option>Open</option>
+                    <option>In Progress</option>
+                    <option>Resolved</option>
+                    <option>Closed</option>
+                </select>
+                <button type="button" class="btn bg-mainbutton border-secondary w-100 fs-5">
+                    <i class="bi bi-check2-circle"></i> Update Ticket
+                </button>
+            </div>
+        </div>
+    </article>
+
+    <article class="col-sm-12 col-md-6 col-lg-6 mb-2">
+        <div class="card h-100 bg-brandcard shadow-lg">
+            <div class="card-body">
+                <h3 class="card-title"><i class="bi bi-check2-all"></i> Resolve Ticket</h3>
+                <h5 class="card-text">Marking this ticket as Resolved will move it to the Resolved History section on
+                    the IT Dashboard.</h5>
+                <form action="resolve.php" method="POST">
+                    <input type="hidden" name="ticket_id" value="TCK-00123">
+                    <button type="submit" class="btn bg-mainbutton border-secondary w-100 fs-5">
+                        <i class="bi bi-check2-circle"></i> Resolve Ticket
+                    </button>
+                </form>
+            </div>
+        </div>
+    </article>
+
+    <article class="col-sm-12 col-md-12 col-lg-12 mb-2">
+        <a href="{% url 'directory_app:dashboard' %}" class="btn bg-secondbutton border-secondary fs-5">
+            <i class="bi bi-arrow-left"></i> Back to Dashboard
+        </a>
+    </article>
+
+</div>
+{% endblock %}

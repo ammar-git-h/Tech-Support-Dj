@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home Page{% endblock %}
+{% block home %}<strong> Home (You are here)</strong>{% endblock %}
+{% block content %}
+<div class="row g-3">
+    <article class="col-sm-12 col-md-12 col-lg-12 mb-2">
+        <div class="card h-100 bg-brandcard shadow-lg">
+            <div class="card-body">
+                <h1 class="card-title text-center"><i class="bi bi-house"></i> Campus Tech Support Ticketing</h1>
+                <h5 class="card-text text-center">On this website, you can submit tickets for technical issues you are experiencing. An IT will review the ticket and respond as soon as possible.</h5>
+            </div>
+        </div>
+    </article>
+    <article class="col-sm-12 col-md-6 col-lg-6 mb-2">
+        <div class="card h-100 bg-brandcard shadow-lg">
+            <div class="card-body">
+                <h1 class="card-title"><i class="bi bi-ticket"></i> Submit a ticket</h1>
+                <h5 class="card-text">If you are experiencing issues, submit a ticket to inform IT for resolving</h5>
+            </div>
+        </div>
+    </article>
+    <article class="col-sm-12 col-md-6 col-lg-6 mb-2">
+        <button type="button" class="btn bg-mainbutton shadow-lg h-100 w-100 fs-3 border-secondary" onclick="window.location.href='{% url 'directory_app:ticketform' %}'"><i class="bi bi-pen"></i> Submit Ticket</button>
+    </article>  
+    <article class="col-sm-12 col-md-6 col-lg-6 mb-2">
+        <div class="card h-100 bg-brandcard shadow-lg">
+            <div class="card-body">
+                <h1 class="card-title"><i class="bi bi-check-circle"></i> Already submitted?</h1>
+                <h5 class="card-text">Check your ticket status</h5>
+            </div>
+        </div>
+    </article>
+    <article class="col-sm-12 col-md-6 col-lg-6 mb-2">
+        <button type="button" class="btn bg-secondbutton shadow-lg h-100 w-100 fs-3 border-secondary" onclick="window.location.href='{% url 'directory_app:ticketstatus' %}'"><i class="bi bi-question-circle"></i> Ticket Status</button>
+    </article>
+    <article class="col-sm-12 col-md-6 col-lg-6 mb-2">
+        <div class="card h-100 bg-brandcard shadow-lg">
+            <div class="card-body">
+                <h3 class="card-title"><i class="bi bi-database"></i> Admin?</h3>
+                <h5 class="card-text">Log in to view dashboard</h5>
+            </div>
+        </div>
+    </article>
+    <article class="col-sm-12 col-md-6 col-lg-6 mb-2">
+        <button type="button" class="btn bg-thirdbutton shadow-lg h-100 w-100 fs-3 border-secondary" onclick="window.location.href='{% url 'directory_app:dashboard' %}'"><i class="bi bi-box-arrow-in-right"></i> Log in</button>
+    </article>
+</div>
+{% endblock %}
